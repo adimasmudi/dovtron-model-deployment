@@ -9,7 +9,7 @@ import io
 app = flask.Flask(__name__)
 model = load_model("Plant_Leaf_Model2.h5")
 
-disease = {
+diseases = {
     0 : 'Bercak Daun',
     1 : 'Karat Daun',
     2 : 'Daun Sehat',
@@ -45,7 +45,7 @@ def predict():
 
                 result = np.argmax(preds[0])
 
-                data["predictions"] = disease[result]
+                data["predictions"] = diseases[result]
 
                 # data["image"] = str(img)
 
